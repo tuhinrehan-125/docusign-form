@@ -113,7 +113,6 @@
                 </div>
             </div>
 
-
             <input type="button" name="next" class="next action-button" value="Next" />
         </fieldset>
         <fieldset>
@@ -286,7 +285,6 @@
             </div>
 
             <input type="button" name="previous" class="previous action-button" value="Previous" />
-            <!-- <button type="submit"  class="submit action-button" target="_top">Submit</button> -->
             <input type="button" name="next" class="next action-button" value="Next" />
         </fieldset>
         <fieldset>
@@ -458,11 +456,7 @@
                         <p>High resolution & professionally shot photos are preferred. No Selfies Please.</p>
                         <input type="file" name="image_multiple" id="image_multiple" accept="image/*" multiple>
                         <div id="image-preview"></div>
-                    </div>
-                    <!-- <label>Upload your photos*</label>
-                    <span class="">
-                        <input type="file" size="40" class="" aria-required="true" aria-invalid="false" multiple="multiple" data-min="3" data-max="30" data-id="45936" accept="." />
-                    </span>   -->                                  
+                    </div>                       
                 </div>
             </div>
             
@@ -534,13 +528,11 @@
             <input type="button" name="previous" class="previous action-button" value="Previous" />
             <button type="submit"  class="submit action-button" target="_top">Submit</button>
 
-            <!-- <a href="https://twitter.com/GoktepeAtakan" class="submit action-button" target="_top">Submit</a> -->
         </fieldset>
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
