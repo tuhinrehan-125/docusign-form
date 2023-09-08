@@ -318,7 +318,7 @@
                     </div>
                     <div class="input-group mb-3">
                         <label> Hips* </label><br />
-                        <input type="number" name="hips" class="form-control" placeholder="Type Here" aria-label="Username" size="40">
+                        <input type="text" name="hips" class="form-control" placeholder="Type Here" aria-label="Username" size="40">
                     </div>
                 </div><div class="form-row">
                     <div class="input-group mb-3">
@@ -432,20 +432,20 @@
                     <div class="input-group mb-3">
                         <label> 4. Do you only see:* </label><br />
                         <label class="model-ex">
-                            <input type="checkbox" name="only_see" value="Yes" />
+                            <input type="checkbox" name="men" value="Men" />
                             <span class="wpcf7-list-item-label">Men</span>
                         </label>
 
                         <label class="model-ex">
-                            <input type="checkbox" name="only_see" value="No" />
+                            <input type="checkbox" name="women" value="Women" />
                             <span class="wpcf7-list-item-label">Women</span>
                         </label>
                         <label class="model-ex">
-                            <input type="checkbox" name="only_see" value="No" />
+                            <input type="checkbox" name="couple" value="Couple" />
                             <span class="wpcf7-list-item-label">Couple</span>
                         </label>
                         <label class="model-ex">
-                            <input type="checkbox" name="only_see" value="No" />
+                            <input type="checkbox" name="transgender" value="Transgender" />
                             <span class="wpcf7-list-item-label">Transgender</span>
                         </label>
                     </div>

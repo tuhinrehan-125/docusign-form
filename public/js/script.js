@@ -7,7 +7,7 @@ var animating; //flag to prevent quick multi-click glitches
 
 // Validation function for the first step
 function validateStep1() {
-    return true;
+    // return true;
 
     // Check if at least one checkbox is selected
     var checkboxes = $("input[name='pornstar'], input[name='cam_model'], input[name='social_media_star'], input[name='magazine_model'], input[name='other']");
@@ -36,7 +36,7 @@ function validateStep1() {
 
 // Validation function for the second step
 function validateStep2() {
-    return true;
+    // return true;
     
     var foreign_model = $("input[name='foreign_model']");
     if (!foreign_model.is(":checked")) {
@@ -84,24 +84,108 @@ function validateStep2() {
 
 // Validation function for the third step
 function validateStep3() {
-    var over_eighteen = $("input[name='over_eighteen']");
-    if (!over_eighteen.is(":checked")) {
-        alert("Please select you are 18 plus or not.");
+
+    // return true;
+    
+    var over_eighteen = $("input[name='over_eighteen']:checked").val();
+
+    if (over_eighteen !== "Yes") {
+        alert("Please confirm that you are over 18.");
         return false;
     }
 
-    var age_proof_file = $("input[name='age_proof_file']");
-    if (!(age_proof_file.files.length > 0)) {
-        alert("Please submit the ID.");
+
+    var age_proof_file = $("input[name='age_proof_file']")[0].files;
+    if (age_proof_file.length === 0) {
+        alert("Please submit your ID (Passport or Driver’s Licence) for proof of age.");
         return false;
     }
 
-    var back_of_id_picture = $("input[name='back_of_id_picture']");
-    if (!(back_of_id_picture.files.length > 0)) {
-        alert("Please submit the picture of the back of your ID.");
+    var back_of_id_picture = $("input[name='back_of_id_picture']")[0].files;
+    if (back_of_id_picture.length === 0) {
+        alert("Please submit a picture of the back of your ID.");
         return false;
     }
 
+    return true;
+}
+
+function validateStep4() {
+    // return true;
+    
+    var height = $("input[name='height']").val();
+    var weight = $("input[name='weight']").val();
+    var bustSize = $("input[name='bust_size']").val();
+    var cupSize = $("input[name='cup_size']").val();
+    var waist = $("input[name='waist']").val();
+    var hips = $("input[name='hips']").val();
+    var hairColor = $("input[name='hair_color']").val();
+    var eyeColor = $("select[name='eye_color']").val();
+    // var tatoos = $("select[name='tatoos']").val();
+
+    // Check if any of the required fields are empty
+    if (height === "" || weight === "" || bustSize === "" || cupSize === "" || waist === "" || hips === "" || hairColor === "" || eyeColor === "") {
+        alert("Please fill in all the required fields.");
+        return false;
+    }
+    return true;
+}
+function validateStep5() {
+    // return true;
+
+    var mins_30 = $("input[name='mins_30']").val();
+    var hour_1 = $("input[name='hour_1']").val();
+    var mins_90 = $("input[name='mins_90']").val();
+    var hours_2 = $("input[name='hours_2']").val();
+    var hours_3 = $("input[name='hours_3']").val();
+    var hours_4 = $("input[name='hours_4']").val();
+    var hours_5 = $("input[name='hours_5']").val();
+    var overnight_8_hours = $("select[name='overnight_8_hours']").val();
+    var overday_8_hours = $("select[name='overday_8_hours']").val();
+
+    // Check if any of the required fields are empty
+    if (mins_30 === "" || hour_1 === "" || mins_90 === "" || hours_2 === "" || hours_3 === "" || hours_4 === "" || hours_5 === "" || overnight_8_hours === "" || overday_8_hours === "") {
+        alert("Please fill in all the required fields.");
+        return false;
+    }
+    return true;
+}
+
+function validateStep6() {
+    // return true;
+
+    var checkboxes = $("input[name='men'], input[name='women'], input[name='couple'], input[name='transgender']");
+    if (!checkboxes.is(":checked")) {
+        alert("Please select at least one checkbox.");
+        return false;
+    }
+
+    // Add other validations for the fields in step 1 here if needed
+    var primary_focus = $("input[name='primary_focus']").val();
+    var secondary_focus = $("input[name='secondary_focus']").val();
+    var entertain = $("input[name='entertain']").val();
+    var racial_objections = $("input[name='racial_objections']").val();
+
+    // Check if any of the required fields are empty
+    if (primary_focus === "" || secondary_focus === "" || entertain === "" || racial_objections === "") {
+        alert("Please fill in all the required fields.");
+        return false;
+    }
+
+    var image_multiple = $("input[name='image_multiple']")[0].files;
+    if (image_multiple.length === 0) {
+        alert("Please upload at least 10 photos.");
+        return false;
+    }
+
+    return true;
+}
+
+function validateStep7() {
+    return true;
+}
+
+function validateStep8() {
     return true;
 }
 
@@ -121,6 +205,16 @@ $(".next").click(function () {
         isValid = validateStep2();
     } else if ($("fieldset").index(current_fs) === 2) {
         isValid = validateStep3();
+    } else if ($("fieldset").index(current_fs) === 3) {
+        isValid = validateStep4();
+    } else if ($("fieldset").index(current_fs) === 4) {
+        isValid = validateStep5();
+    } else if ($("fieldset").index(current_fs) === 5) {
+        isValid = validateStep6();
+    } else if ($("fieldset").index(current_fs) === 6) {
+        isValid = validateStep7();
+    } else if ($("fieldset").index(current_fs) === 7) {
+        isValid = validateStep8();
     }
 
     if (!isValid) {
